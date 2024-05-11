@@ -12,11 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        node-version: 22
+        with:
+          node-version: 22
       - name: Setup environment variables
         run: |
           touch .env
-          echo POSTGRES_URL=${{secret.POSTGRES_URL}}
+          echo POSTGRES_URL=${{secrets.POSTGRES_URL}}
       - name: Run tests
         run: |
           npm install
