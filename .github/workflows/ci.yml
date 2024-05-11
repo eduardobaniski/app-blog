@@ -17,7 +17,7 @@ jobs:
       - name: Setup environment variables
         run: |
           touch .env
-          echo POSTGRES_URL=${{secrets.POSTGRES_URL}}
+          echo POSTGRES_URL=${{secrets.POSTGRES_URL}} > .env
       - name: Run tests
         run: |
           npm install
